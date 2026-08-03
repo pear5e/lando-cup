@@ -37,6 +37,12 @@
   .hero .presented .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.24em;color:#bfe6cf}
   .hero .presented .co{font-size:1.2rem;font-weight:900;color:#fff}
   .hero .presented .co b{color:var(--lime)}
+  .sponsor-bar a{color:var(--lime);text-decoration:none}
+  .sponsor-bar a:hover{text-decoration:underline}
+  .hero .presented a.co{color:#fff;text-decoration:none;transition:.12s}
+  .hero .presented a.co:hover{color:var(--lime)}
+  footer .sponsor-link{color:var(--lime);text-decoration:none;font-weight:800}
+  footer .sponsor-link:hover{text-decoration:underline}
   nav{position:sticky;top:0;z-index:50;background:rgba(11,107,58,.96);backdrop-filter:blur(6px);box-shadow:0 4px 18px rgba(0,0,0,.18)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   .brand{color:#fff;font-weight:900;font-size:1.05rem;display:flex;gap:8px;align-items:center}
@@ -290,7 +296,7 @@
 </head>
 <body>
 
-<div class="sponsor-bar">🐢 Proudly presented by <b>Terrapin Station Golf Co.</b> ⛳</div>
+<div class="sponsor-bar">🐢 Proudly presented by <a href="https://tsgolfco.com/" target="_blank" rel="noopener"><b>Terrapin Station Golf Co.</b></a> ⛳</div>
 
 <nav>
   <div class="wrap">
@@ -317,7 +323,7 @@
 
     <div class="presented">
       <span class="lbl">Presented by</span>
-      <span class="co">🐢 Terrapin Station Golf Co.</span>
+      <a class="co" href="https://tsgolfco.com/" target="_blank" rel="noopener">🐢 Terrapin Station Golf Co.</a>
     </div>
 
     <div class="countdown" id="countdown">
@@ -629,7 +635,7 @@
 <footer>
   <div class="big">🏆 May the best team lift the Lando Cup — Orlando, March 2027</div>
   <div>Long drives, short putts, and a net score that holds up. • Built for the crew.</div>
-  <div style="margin-top:14px;font-weight:800;color:#fff">🐢 Presented by Terrapin Station Golf Co.</div>
+  <div style="margin-top:14px;font-weight:800;color:#fff">🐢 Presented by <a class="sponsor-link" href="https://tsgolfco.com/" target="_blank" rel="noopener">Terrapin Station Golf Co.</a></div>
 </footer>
 
 <script>
