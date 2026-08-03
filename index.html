@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lando Cup 2027 — Orlando Golf Trip 🏆⛳</title>
+<style>
+  :root{
+    --fairway:#0b6b3a;
+    --fairway-deep:#064526;
+    --lime:#c6f24e;
+    --lime-bright:#a4e80c;
+    --sun:#ff7a1a;
+    --sky:#1fa8d8;
+    --sand:#f6efdd;
+    --red:#e23b53;
+    --red-deep:#b31f36;
+    --blue:#2a6df0;
+    --blue-deep:#1547b8;
+    --ink:#0d1b12;
+    --paper:#fbfdf7;
+    --card:#ffffff;
+    --shadow:0 10px 30px rgba(6,69,38,.15);
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Trebuchet MS','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  h1,h2,h3{font-weight:900;letter-spacing:-.02em;line-height:1.05}
+  a{color:var(--fairway)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .badge{display:inline-block;background:var(--lime);color:var(--fairway-deep);font-weight:900;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;padding:6px 14px;border-radius:999px}
+
+  .sponsor-bar{background:var(--fairway-deep);color:#eafff2;text-align:center;font-weight:800;font-size:.82rem;letter-spacing:.03em;padding:9px 16px;border-bottom:2px solid var(--lime-bright)}
+  .sponsor-bar b{color:var(--lime)}
+  .hero .presented{margin:24px auto 0;display:inline-flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.08);border:1px solid rgba(198,242,78,.35);border-radius:14px;padding:12px 26px}
+  .hero .presented .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.24em;color:#bfe6cf}
+  .hero .presented .co{font-size:1.2rem;font-weight:900;color:#fff}
+  .hero .presented .co b{color:var(--lime)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,107,58,.96);backdrop-filter:blur(6px);box-shadow:0 4px 18px rgba(0,0,0,.18)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{color:#fff;font-weight:900;font-size:1.05rem;display:flex;gap:8px;align-items:center}
+  .navlinks{display:flex;gap:2px;flex-wrap:wrap}
+  .navlinks a{color:#eafff2;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 11px;border-radius:999px;transition:.15s}
+  .navlinks a:hover{background:rgba(255,255,255,.15);color:#fff}
+  .menu-btn{display:none;background:var(--lime);border:none;color:var(--fairway-deep);font-weight:900;padding:8px 14px;border-radius:10px;cursor:pointer}
+
+  header.hero{position:relative;overflow:hidden;color:#fff;text-align:center;
+    background:radial-gradient(1200px 500px at 80% -10%, rgba(198,242,78,.35), transparent 60%),
+      radial-gradient(900px 400px at 10% 110%, rgba(31,168,216,.35), transparent 55%),
+      linear-gradient(160deg,var(--fairway) 0%, var(--fairway-deep) 100%);
+    padding:64px 0 84px}
+  .hero .badge{margin-bottom:18px}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);text-shadow:0 4px 24px rgba(0,0,0,.25)}
+  .hero .sub{font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:700;margin-top:12px;color:#eafff2}
+  .hero .where{margin-top:8px;color:#c6f24e;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem}
+  .countdown{display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+  .cd-box{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px 20px;min-width:92px}
+  .cd-box b{display:block;font-size:2.2rem;line-height:1}
+  .cd-box span{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#d8ffe8}
+  .cta{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:900;cursor:pointer;padding:14px 24px;border-radius:999px;border:none;font-size:1rem;transition:.15s}
+  .btn-primary{background:var(--lime);color:var(--fairway-deep)}
+  .btn-primary:hover{background:var(--lime-bright);transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:rgba(255,255,255,.24)}
+
+  section{padding:60px 0;scroll-margin-top:66px}
+  section:nth-of-type(even){background:var(--sand)}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .sec-head .num{font-size:.85rem;font-weight:900;color:var(--sun);letter-spacing:.1em}
+  h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+  .sec-intro{color:#3a4a40;max-width:680px;margin:10px 0 32px;font-size:1.05rem}
+  .edit-note{font-size:.8rem;color:#8a7a4a;background:#fff6d6;border:1px dashed #e3c34a;padding:3px 10px;border-radius:8px;font-weight:700;display:inline-block}
+
+  /* FORMAT */
+  .fmt-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+  .fmt-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+  .fmt-card h3{color:var(--fairway);font-size:1.3rem;margin-bottom:10px}
+  .fmt-card p{color:#3f4f45;font-size:.98rem;margin-bottom:10px}
+  .points-big{text-align:center;background:linear-gradient(160deg,var(--fairway),var(--fairway-deep));color:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .points-big .n{font-size:3.6rem;font-weight:900;line-height:1;color:var(--lime)}
+  .points-big .l{text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:#d8ffe8}
+  .points-big .win{margin-top:10px;font-weight:800;font-size:1.05rem}
+  .sessions{margin-top:22px;display:grid;gap:12px}
+  .sess{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:16px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;border-left:8px solid var(--lime-bright)}
+  .sess .when{min-width:150px;font-weight:900;color:var(--fairway-deep)}
+  .sess .when small{display:block;color:var(--sun);font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+  .sess .fmt{flex:1;font-weight:700;color:#2f3f35}
+  .sess .fmt small{display:block;color:#6a7a6e;font-weight:600;font-size:.85rem;margin-top:2px}
+  .sess .pts{background:var(--lime);color:var(--fairway-deep);font-weight:900;border-radius:999px;padding:6px 14px;font-size:.85rem;white-space:nowrap}
+
+  /* TIMELINE */
+  .timeline{display:grid;gap:16px}
+  .day{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;border-left:8px solid var(--lime-bright)}
+  .day h3{font-size:1.3rem;color:var(--fairway)}
+  .day .date{font-weight:800;color:var(--sun);text-transform:uppercase;font-size:.8rem;letter-spacing:.08em}
+  .day ul{list-style:none;margin-top:12px;display:grid;gap:8px}
+  .day li{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-top:1px solid #eef0e8}
+  .day li:first-child{border-top:none}
+  .time{font-weight:900;color:var(--fairway-deep);min-width:70px;font-variant-numeric:tabular-nums}
+  .evt{flex:1}
+  .evt .tag{display:inline-block;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .tag.golf{background:#dff7c4;color:#3d6b0a}
+  .tag.food{background:#ffe1c9;color:#9c4a10}
+  .tag.travel{background:#cdeefb;color:#0b5c7d}
+  .tag.fun{background:#f3d9ff;color:#6a1c8f}
+  .tag.cup{background:#ffd9df;color:#b31f36}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+  .card:hover{transform:translateY(-4px)}
+  .card .thumb{height:118px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;color:#fff;position:relative}
+  .card .thumb .role{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.28);color:#fff;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;padding:3px 9px;border-radius:999px}
+  .t1{background:linear-gradient(135deg,#0b6b3a,#1fa8d8)}
+  .t2{background:linear-gradient(135deg,#ff7a1a,#a4e80c)}
+  .t3{background:linear-gradient(135deg,#2a6df0,#5b3df0)}
+  .t4{background:linear-gradient(135deg,#e0407a,#ff7a1a)}
+  .card .body{padding:18px 20px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .card h3{font-size:1.2rem;color:var(--fairway-deep)}
+  .card .meta{font-size:.85rem;color:#5a6a5e;font-weight:700}
+  .card p{font-size:.9rem;color:#4a5a4e;margin-top:4px}
+  .card .stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:auto;padding-top:12px;font-size:.82rem;font-weight:800;color:var(--fairway)}
+
+  .panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  .panel h3{font-size:1.15rem;color:var(--fairway);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+  .panel p,.panel li{font-size:.95rem;color:#3f4f45}
+  .panel ul{list-style:none;margin-top:8px;display:grid;gap:6px}
+  .panel li{padding-left:20px;position:relative}
+  .panel li:before{content:"⛳";position:absolute;left:0}
+  .panel .price{font-size:1.7rem;font-weight:900;color:var(--sun);margin:4px 0 8px}
+  .panel .price small{font-size:.8rem;color:#6a7a6e;font-weight:700}
+  .prize-panel{border-top:6px solid var(--lime-bright)}
+
+  /* ROSTER */
+  .team-note{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:16px 20px;margin-bottom:22px;font-size:.95rem;color:#3f4f45}
+  .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .player{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:18px 14px;text-align:center}
+  .player.tbd{opacity:.72;border:2px dashed #d7ddcf}
+  .avatar{width:58px;height:58px;border-radius:50%;margin:0 auto 10px;background:linear-gradient(135deg,var(--fairway),var(--lime-bright));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.15rem}
+  .player.tbd .avatar{background:linear-gradient(135deg,#9fb0a2,#c9d4bd)}
+  .player .name{font-weight:900;color:var(--fairway-deep);font-size:.95rem}
+  .player .role{font-size:.72rem;color:var(--sun);font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+
+  .cost-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .cost-table th{background:var(--fairway);color:#fff;text-align:left;padding:14px 18px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+  .cost-table td{padding:14px 18px;border-top:1px solid #eef0e8;font-size:.95rem}
+  .cost-table tr:nth-child(even) td{background:#f7faf3}
+  .cost-table .total td{background:var(--lime);font-weight:900;color:var(--fairway-deep);font-size:1.05rem}
+  .cost-note{margin-top:14px;font-size:.9rem;color:#5a6a5e}
+
+  /* CUP TRACKER */
+  .scoreboard{background:linear-gradient(160deg,#0d1b12,#064526);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;color:#fff}
+  .teams{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-bottom:8px}
+  .teamcol{text-align:center}
+  .teamcol input{background:transparent;border:none;border-bottom:2px dashed rgba(255,255,255,.35);color:#fff;font-family:inherit;font-weight:900;font-size:1.05rem;text-align:center;width:100%;max-width:180px}
+  .teamcol input:focus{outline:none;border-bottom-color:var(--lime)}
+  .teamcol.red .score{color:#ff8497}
+  .teamcol.blue .score{color:#8fb4ff}
+  .teamcol .score{font-size:3.4rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+  .vs{font-weight:900;color:#c6f24e;font-size:1rem}
+  .barwrap{height:16px;border-radius:999px;overflow:hidden;background:#123;display:flex;margin:6px 0 4px;border:1px solid rgba(255,255,255,.15)}
+  .bar-red{background:linear-gradient(90deg,#e23b53,#ff6b80);height:100%}
+  .bar-blue{background:linear-gradient(90deg,#2a6df0,#6b9bff);height:100%}
+  .winline{text-align:center;font-size:.82rem;color:#c9d8cf;margin-bottom:14px}
+  .winline b{color:var(--lime)}
+  .cup-msg{text-align:center;font-weight:900;font-size:1.1rem;color:var(--lime);min-height:1.4em;margin-bottom:6px}
+
+  .msession{margin-top:16px}
+  .msession h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#c6f24e;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:6px}
+  .match{display:flex;align-items:center;gap:8px;padding:7px 0;flex-wrap:wrap}
+  .match .mno{font-weight:900;color:#9fb0a2;min-width:26px;font-size:.85rem}
+  .match .mlbl{flex:1;min-width:120px;font-size:.86rem;color:#e7f2ea}
+  .pick{display:flex;gap:5px}
+  .pick button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-weight:800;font-size:.75rem;padding:6px 10px;border-radius:8px;cursor:pointer;transition:.12s}
+  .pick button:hover{background:rgba(255,255,255,.16)}
+  .pick button.on.red{background:var(--red);border-color:var(--red)}
+  .pick button.on.half{background:#eab308;border-color:#eab308;color:#3a2e00}
+  .pick button.on.blue{background:var(--blue);border-color:var(--blue)}
+  .reset-cup{margin-top:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:800;padding:9px 16px;border-radius:10px;cursor:pointer}
+
+  footer{background:var(--fairway-deep);color:#cde6d6;text-align:center;padding:40px 20px}
+  footer .big{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:6px}
+  footer a{color:var(--lime)}
+
+  /* ---- SCORING APP ---- */
+  .app{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .apptabs{display:flex;flex-wrap:wrap;gap:2px;background:var(--fairway-deep);padding:8px 8px 0}
+  .apptabs button{background:rgba(255,255,255,.08);color:#d8ffe8;border:none;font-family:inherit;font-weight:800;font-size:.9rem;padding:11px 16px;border-radius:12px 12px 0 0;cursor:pointer;transition:.12s}
+  .apptabs button:hover{background:rgba(255,255,255,.18)}
+  .apptabs button.on{background:var(--card);color:var(--fairway-deep)}
+  .apptop{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:12px 18px;background:#f2f7ec;border-bottom:1px solid #e2ead8;font-size:.85rem}
+  .apptop button,.apptop .imp{background:#fff;border:1px solid #cfdcc2;color:var(--fairway-deep);font-family:inherit;font-weight:700;padding:7px 12px;border-radius:9px;cursor:pointer;font-size:.82rem}
+  .apptop .imp input{display:none}
+  .apptop .save{margin-left:auto;color:#6a7a6e;font-weight:700}
+  .tabpane{padding:20px 18px}
+  .tabpane.hidden{display:none}
+  .app h3.blk{font-size:1.05rem;color:var(--fairway);margin:6px 0 12px;border-bottom:2px solid #eef0e8;padding-bottom:6px}
+  .hint{font-size:.82rem;color:#6a7a6e;margin:2px 0 14px}
+
+  /* setup */
+  .setrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+  .teamname-in{font-family:inherit;font-weight:900;padding:8px 12px;border-radius:10px;border:2px solid #dfe6d8;font-size:.95rem}
+  .teamname-in.red{border-color:var(--red)}
+  .teamname-in.blue{border-color:var(--blue)}
+  .psetup{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:10px}
+  .prow{display:flex;align-items:center;gap:8px;background:#f7faf3;border:1px solid #e6ece0;border-radius:12px;padding:8px 10px}
+  .prow .pn{flex:1;font-weight:800;color:var(--fairway-deep);font-size:.88rem}
+  .prow input.idx{width:52px;padding:5px;border:1px solid #dfe6d8;border-radius:7px;font-family:inherit;text-align:center;font-weight:700}
+  .tbtn{border:1px solid #cfdcc2;background:#fff;font-family:inherit;font-weight:800;font-size:.72rem;padding:5px 8px;border-radius:7px;cursor:pointer;color:#5a6a5e}
+  .tbtn.ra{background:var(--red);border-color:var(--red);color:#fff}
+  .tbtn.ba{background:var(--blue);border-color:var(--blue);color:#fff}
+  details.crd{background:#f7faf3;border:1px solid #e6ece0;border-radius:12px;margin-bottom:10px;padding:6px 12px}
+  details.crd summary{font-weight:800;color:var(--fairway-deep);cursor:pointer;padding:6px 0;font-size:.9rem}
+  .sc-edit{overflow-x:auto}
+  table.sc-mini{border-collapse:collapse;min-width:640px;font-size:.78rem;margin-top:8px}
+  table.sc-mini th,table.sc-mini td{border:1px solid #e6ece0;padding:3px 5px;text-align:center}
+  table.sc-mini th{background:#eef6e2;color:#3d6b0a}
+  table.sc-mini .lbl{text-align:left;font-weight:800;color:var(--fairway-deep);white-space:nowrap;background:#f2f7ec}
+  table.sc-mini input{width:34px;border:1px solid #dfe6d8;border-radius:5px;padding:2px;text-align:center;font-family:inherit;font-size:.78rem}
+  .metaline{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:6px 0}
+  .metaline label{font-size:.8rem;color:#5a6a5e;font-weight:700}
+  .metaline input{width:70px;padding:5px;border:1px solid #dfe6d8;border-radius:7px;font-family:inherit;text-align:center}
+
+  /* score entry */
+  .rsel{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .rsel button{background:#fff;border:2px solid #dfe6d8;color:var(--fairway-deep);font-family:inherit;font-weight:800;font-size:.82rem;padding:8px 12px;border-radius:10px;cursor:pointer}
+  .rsel button.on{background:var(--fairway);border-color:var(--fairway);color:#fff}
+  .entry-wrap{overflow-x:auto}
+  table.entry{border-collapse:collapse;min-width:900px;font-size:.8rem;font-variant-numeric:tabular-nums}
+  table.entry th,table.entry td{border:1px solid #e6ece0;padding:3px 4px;text-align:center}
+  table.entry thead th{background:var(--fairway-deep);color:#fff}
+  table.entry .par-row td,table.entry .si-row td{background:#eef6e2;font-weight:700;color:#3d6b0a;font-size:.72rem}
+  table.entry .si-row td{background:#f4f0e2;color:#8a6a10}
+  table.entry .pn{text-align:left;font-weight:800;color:var(--fairway-deep);white-space:nowrap;background:#f7faf3;position:sticky;left:0;z-index:2;min-width:120px}
+  table.entry .pn small{display:block;font-weight:600;color:#8a7a4a;font-size:.66rem}
+  table.entry input.sc{width:34px;border:1px solid #dfe6d8;border-radius:5px;padding:3px 1px;text-align:center;font-family:inherit;font-weight:700}
+  table.entry input.sc:focus{outline:none;border-color:var(--lime-bright);background:#fbffee}
+  table.entry .sum{background:var(--sand);font-weight:900;color:var(--fairway-deep)}
+  table.entry .topar.u{color:#c62828}table.entry .topar.d{color:#2e7d32}
+
+  /* cup matches with pickers */
+  .cupmatch{border:1px solid #e6ece0;border-radius:12px;padding:10px 12px;margin-bottom:8px;background:#fbfdf7}
+  .cupmatch .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .cupmatch .mno{font-weight:900;color:#9aa89c;font-size:.8rem;min-width:56px}
+  .cupmatch .res{margin-left:auto;font-weight:900;font-size:.85rem;padding:4px 10px;border-radius:999px;background:#eef0e8;color:#5a6a5e}
+  .cupmatch .res.red{background:#ffd9df;color:var(--red-deep)}
+  .cupmatch .res.blue{background:#d3e0ff;color:var(--blue-deep)}
+  .cupmatch .res.half{background:#fff2c4;color:#8a6a10}
+  .cupmatch .sides{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:8px}
+  .cupmatch select{font-family:inherit;font-size:.8rem;padding:5px;border:1px solid #dfe6d8;border-radius:7px;width:100%;margin:2px 0;background:#fff}
+  .cupmatch .midvs{font-weight:900;color:#9aa89c;font-size:.8rem}
+  .ovr{display:flex;gap:4px;margin-top:8px;justify-content:flex-end}
+  .ovr button{border:1px solid #cfdcc2;background:#fff;font-family:inherit;font-weight:800;font-size:.7rem;padding:4px 9px;border-radius:7px;cursor:pointer;color:#5a6a5e}
+  .ovr button.ra{background:var(--red);border-color:var(--red);color:#fff}
+  .ovr button.ba{background:var(--blue);border-color:var(--blue);color:#fff}
+  .ovr button.ha{background:#eab308;border-color:#eab308;color:#3a2e00}
+  .ovr .auto{color:#8aa;font-weight:700;align-self:center;margin-right:auto;font-size:.7rem}
+
+  /* stats */
+  .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .statcard{background:#f7faf3;border:1px solid #e6ece0;border-radius:14px;padding:14px 16px}
+  .statcard h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--sun);margin-bottom:10px}
+  table.stat{border-collapse:collapse;width:100%;font-size:.82rem}
+  table.stat th,table.stat td{border-bottom:1px solid #e6ece0;padding:6px 8px;text-align:center}
+  table.stat th{color:#5a6a5e;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+  table.stat td.nm{text-align:left;font-weight:800;color:var(--fairway-deep);white-space:nowrap}
+  table.stat td.dot{width:10px}
+  .dotr{color:var(--red)}.dotb{color:var(--blue)}
+  table.stat tr.lead1 td{background:var(--lime)}
+  .teamsum{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+  .tsum{border-radius:14px;padding:16px;color:#fff}
+  .tsum.red{background:linear-gradient(150deg,var(--red),var(--red-deep))}
+  .tsum.blue{background:linear-gradient(150deg,var(--blue),var(--blue-deep))}
+  .tsum .nm{font-weight:900;font-size:1.05rem}
+  .tsum .pts{font-size:2.4rem;font-weight:900;line-height:1.1}
+  .tsum .rec{font-size:.82rem;opacity:.9}
+  .stat-scroll{overflow-x:auto}
+  @media(max-width:680px){.lead-grid{grid-template-columns:1fr}.teamsum{grid-template-columns:1fr}}
+  @media(max-width:820px){.fmt-hero{grid-template-columns:1fr}}
+  @media(max-width:760px){
+    .navlinks{display:none;position:absolute;top:60px;left:0;right:0;background:var(--fairway-deep);flex-direction:column;padding:10px;gap:2px}
+    .navlinks.open{display:flex}
+    .navlinks a{padding:12px}
+    .menu-btn{display:block}
+    .teamcol .score{font-size:2.6rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="sponsor-bar">🐢 Proudly presented by <b>Terrapin Station Golf Co.</b> ⛳</div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">🏆 Lando Cup '27</div>
+    <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">Menu</button>
+    <div class="navlinks" id="nav">
+      <a href="#format">Format</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#courses">Courses</a>
+      <a href="#stay">Stay &amp; Travel</a>
+      <a href="#roster">Roster</a>
+      <a href="#costs">Costs</a>
+      <a href="#cup">Live Scoring</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Ryder Cup Style • March 10–14, 2027</span>
+    <h1>The Lando Cup</h1>
+    <div class="sub">Two teams. Five courses. One trophy. ☀️⛳🏆</div>
+    <div class="where">Orlando, Florida</div>
+
+    <div class="presented">
+      <span class="lbl">Presented by</span>
+      <span class="co">🐢 Terrapin Station Golf Co.</span>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><b id="cd-days">—</b><span>Days</span></div>
+      <div class="cd-box"><b id="cd-hours">—</b><span>Hours</span></div>
+      <div class="cd-box"><b id="cd-mins">—</b><span>Minutes</span></div>
+      <div class="cd-box"><b id="cd-secs">—</b><span>Seconds</span></div>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="#format">The Format</a>
+      <a class="btn btn-ghost" href="#cup">Live Cup Tracker</a>
+    </div>
+  </div>
+</header>
+
+<!-- FORMAT -->
+<section id="format">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01</span><h2>The Format</h2></div>
+    <p class="sec-intro">A Ryder Cup–style battle: two teams of six, captains draft the squads at the welcome dinner, and every match across the weekend is worth <strong>1 point</strong>.</p>
+
+    <div class="fmt-hero">
+      <div class="fmt-card">
+        <h3>How it works</h3>
+        <p>Twelve golfers split into <strong>two teams of six</strong>. Two captains (selected later) draft their squads Thursday night after the practice round.</p>
+        <p>Friday and Saturday feature <strong>two-man team matches</strong> — morning and afternoon. Sunday is <strong>individual net match play</strong>, everyone out on the course with a point on the line. Most points wins the Cup.</p>
+        <p style="margin-bottom:0"><strong>All scoring is net</strong>, so handicaps keep every match honest.</p>
+      </div>
+      <div class="points-big">
+        <div class="n">18</div>
+        <div class="l">Total points up for grabs</div>
+        <div class="win">🏆 9½ to win the Cup</div>
+      </div>
+    </div>
+
+    <div class="sessions">
+      <div class="sess">
+        <div class="when">Fri Morning<small>Celebration GC</small></div>
+        <div class="fmt">2-Man Team Net Best Ball<small>Both play their own ball; the team takes the better net score on each hole.</small></div>
+        <div class="pts">3 points</div>
+      </div>
+      <div class="sess">
+        <div class="when">Fri Afternoon<small>Celebration GC</small></div>
+        <div class="fmt">2-Man Team Net Best Ball Shamble<small>Play the best drive of the two, then each plays their own ball in — better net score counts.</small></div>
+        <div class="pts">3 points</div>
+      </div>
+      <div class="sess">
+        <div class="when">Sat Morning<small>Evermore GC</small></div>
+        <div class="fmt">2-Man Team Net Best Ball<small>Same as Friday morning — better net ball on every hole.</small></div>
+        <div class="pts">3 points</div>
+      </div>
+      <div class="sess">
+        <div class="when">Sat Afternoon<small>Evermore GC</small></div>
+        <div class="fmt">2-Man Team Net Best Ball Shamble<small>Best drive, then your own ball — better net score counts.</small></div>
+        <div class="pts">3 points</div>
+      </div>
+      <div class="sess">
+        <div class="when">Sun<small>Shingle Creek GC</small></div>
+        <div class="fmt">Individual Net Match Play<small>Six singles matches, one 18-hole round — the closer.</small></div>
+        <div class="pts">6 points</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02</span><h2>Itinerary</h2></div>
+    <p class="sec-intro">Five days, four rounds of Cup golf, and a practice round to warm up. <span class="edit-note">✎ Tee times are placeholders — I'll lock them in once they're booked.</span></p>
+
+    <div class="timeline">
+      <div class="day">
+        <div class="date">Wednesday • March 10</div>
+        <h3>Arrival Day</h3>
+        <ul>
+          <li><span class="time">5:00p</span><span class="evt">House opens — check in, settle in, first round of drinks<span class="tag travel">Travel</span></span></li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="date">Thursday • March 11</div>
+        <h3>Practice Round &amp; The Draft</h3>
+        <ul>
+          <li><span class="time">AM</span><span class="evt">Practice round at Mystic Dunes Golf Club<span class="tag golf">Golf</span></span></li>
+          <li><span class="time">Eve</span><span class="evt">Welcome dinner — likely Miller's Ale House (TBD)<span class="tag food">Food</span></span></li>
+          <li><span class="time">Eve</span><span class="evt">Captains draft the two teams of six<span class="tag cup">Draft</span></span></li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="date">Friday • March 12</div>
+        <h3>Cup Day 1 — Celebration Golf Club</h3>
+        <ul>
+          <li><span class="time">AM</span><span class="evt">Match 1 — 2-Man Team Net Best Ball (3 pts)<span class="tag cup">Cup</span></span></li>
+          <li><span class="time">PM</span><span class="evt">Match 2 — 2-Man Net Best Ball Shamble (3 pts)<span class="tag cup">Cup</span></span></li>
+          <li><span class="time">Eve</span><span class="evt">Team dinner out — location TBD<span class="tag food">Food</span></span></li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="date">Saturday • March 13</div>
+        <h3>Cup Day 2 — Grand Cypress (Links Course)</h3>
+        <ul>
+          <li><span class="time">AM</span><span class="evt">Match 3 — 2-Man Team Net Best Ball (3 pts)<span class="tag cup">Cup</span></span></li>
+          <li><span class="time">PM</span><span class="evt">Match 4 — 2-Man Net Best Ball Shamble (3 pts)<span class="tag cup">Cup</span></span></li>
+          <li><span class="time">Eve</span><span class="evt">Team dinner out — location TBD<span class="tag food">Food</span></span></li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="date">Sunday • March 14</div>
+        <h3>Singles Sunday — Shingle Creek Golf Club</h3>
+        <ul>
+          <li><span class="time">AM</span><span class="evt">Individual Net Match Play — one 18-hole round (6 pts)<span class="tag cup">Cup</span></span></li>
+          <li><span class="time">3:00p+</span><span class="evt">Fly home no earlier than 3pm — airport is ~15 min away<span class="tag travel">Travel</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03</span><h2>The Courses</h2></div>
+    <p class="sec-intro">One practice round and three Cup venues across the Orlando area.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="thumb t2"><span class="role">Thu • Practice</span>🌅</div>
+        <div class="body">
+          <h3>Mystic Dunes Golf Club</h3>
+          <div class="meta">Celebration, FL • Par 72</div>
+          <p>Gary Koch design with a links-style front nine and a Lowcountry-style back. The warm-up before the Cup begins.</p>
+          <div class="stat-row"><span>⛳ 18 holes</span><span>Par 72</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb t1"><span class="role">Fri • Cup</span>🏌️</div>
+        <div class="body">
+          <h3>Celebration Golf Club</h3>
+          <div class="meta">Celebration, FL • Par 72 • RTJ Sr. &amp; Jr.</div>
+          <p>The only course co-designed by Robert Trent Jones Sr. &amp; Jr. (opened 1996). "A hard par and an easy bogey" — both Friday rounds, morning and afternoon.</p>
+          <div class="stat-row"><span>⛳ 18 holes</span><span>Black/Gold 6,575</span><span>72.1 / 137</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb t3"><span class="role">Sat • Cup</span>🐊</div>
+        <div class="body">
+          <h3>Grand Cypress (Evermore Resort)</h3>
+          <div class="meta">Orlando, FL • Par 72 • Jack Nicklaus</div>
+          <p>Saturday's two Cup rounds at Grand Cypress: the <strong>Links Course</strong> in the morning and the <strong>Cypress Course</strong> in the afternoon.</p>
+          <div class="stat-row"><span>Links · White 6,181</span><span>Cypress · Blue 6,282</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb t4"><span class="role">Sun • Singles</span>🏆</div>
+        <div class="body">
+          <h3>Shingle Creek Golf Club</h3>
+          <div class="meta">Orlando (Universal Blvd) • Par 72 • Palmer Design</div>
+          <p>An Arnold Palmer Design Company course, ~15 minutes from the airport — perfect for Singles Sunday and a clean getaway.</p>
+          <div class="stat-row"><span>⛳ 18 holes</span><span>Blue 6,213 · 69.9/122</span><span>15 min to MCO</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="cost-note" style="margin-top:16px">Real per-hole scorecards (par + stroke index, slope/rating) are loaded for all five Cup rounds — Celebration, Grand Cypress Links &amp; Cypress, and Shingle Creek — and power the net scoring engine below. Scorecard and hole-by-hole stroke-index data sourced from <strong>18Birdies</strong>.</p>
+  </div>
+</section>
+
+<!-- STAY & TRAVEL -->
+<section id="stay">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">04</span><h2>Stay &amp; Travel</h2></div>
+    <p class="sec-intro">Where we're based and how to get in and out. <span class="edit-note">✎ Add the house address &amp; flight details when set.</span></p>
+
+    <div class="panels">
+      <div class="panel">
+        <h3>🏠 Home Base</h3>
+        <p><strong>The House</strong><br>Address TBD, Orlando area</p>
+        <ul>
+          <li>Opens Wed, March 10 at 5:00pm</li>
+          <li>Depart Sunday, March 14 after golf</li>
+          <li>Sleeping arrangements TBD</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>✈️ Getting There</h3>
+        <p>Fly into <strong>Orlando International (MCO)</strong>.</p>
+        <ul>
+          <li>Sunday flights: <strong>no earlier than 3:00pm</strong></li>
+          <li>Shingle Creek is ~15 min from MCO</li>
+          <li>Share flight times so we can coordinate rides</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>🎒 Bring</h3>
+        <ul>
+          <li>Clubs + plenty of golf balls</li>
+          <li>Your current handicap (net matters!)</li>
+          <li>Golf shoes &amp; sunscreen — it's Florida</li>
+          <li>Rain layer, just in case</li>
+          <li>Cash for side bets &amp; the cart girl</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER -->
+<section id="roster">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">05</span><h2>The Field</h2></div>
+    <p class="sec-intro">The full field of twelve, ordered by handicap index. Two captains will draft them into two teams of six on Thursday night.</p>
+
+    <div class="team-note">🎖️ <strong>Draft night:</strong> Captains (TBD) build their squads at the welcome dinner. Once teams are set, I'll split this into two named, color-coded squads and wire the names straight into the Cup tracker. <em>Handicap indexes below are current as of today and will be refreshed right before the event.</em></div>
+
+    <div class="roster">
+      <div class="player"><div class="avatar">DA</div><div class="name">Dan Abbene</div><div class="role">HCP 5.4</div></div>
+      <div class="player"><div class="avatar">MP</div><div class="name">Mike Pearse</div><div class="role">HCP 6.8</div></div>
+      <div class="player"><div class="avatar">MC</div><div class="name">Mike Campisi</div><div class="role">HCP 7.8</div></div>
+      <div class="player"><div class="avatar">MM</div><div class="name">Michael McSloy</div><div class="role">HCP 9.4</div></div>
+      <div class="player"><div class="avatar">DS</div><div class="name">David Sommo</div><div class="role">HCP 10.0</div></div>
+      <div class="player"><div class="avatar">CC</div><div class="name">Charles Campisi</div><div class="role">HCP 12.4</div></div>
+      <div class="player"><div class="avatar">AM</div><div class="name">Adam Melanson</div><div class="role">HCP 13.3</div></div>
+      <div class="player"><div class="avatar">PQ</div><div class="name">Patrick Quinn</div><div class="role">HCP 14.2</div></div>
+      <div class="player"><div class="avatar">RS</div><div class="name">Reggie Smith</div><div class="role">HCP 15.1</div></div>
+      <div class="player"><div class="avatar">SS</div><div class="name">Steve Szalay</div><div class="role">HCP 15.5</div></div>
+      <div class="player"><div class="avatar">MO</div><div class="name">Matt O'Leary</div><div class="role">HCP 17.1</div></div>
+      <div class="player"><div class="avatar">TO</div><div class="name">Tim O'Connor</div><div class="role">HCP 20.0</div></div>
+    </div>
+    <p class="cost-note" style="margin-top:16px">Field of 12 · handicap indexes range 5.4–20.0. Captains &amp; team assignments to come after the Thursday draft.</p>
+  </div>
+</section>
+
+<!-- COSTS -->
+<section id="costs">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">06</span><h2>Buy-In &amp; Prizes</h2></div>
+    <p class="sec-intro">Three pots on the line. Total competition buy-in is <strong>$300 per golfer</strong> — with $3,600 up for grabs across the weekend.</p>
+
+    <div class="panels">
+      <div class="panel prize-panel">
+        <h3>🏆 The Cup</h3>
+        <div class="price">$250 <small>/ golfer</small></div>
+        <ul>
+          <li>Pot: $3,000 (12 × $250)</li>
+          <li>Winning team of 6 splits it evenly</li>
+          <li>= $500 each · net +$250</li>
+        </ul>
+      </div>
+      <div class="panel prize-panel">
+        <h3>🎯 Low Net</h3>
+        <div class="price">$25 <small>/ golfer</small></div>
+        <ul>
+          <li>Pot: $300 (12 × $25)</li>
+          <li>Best net across the 5 weekend rounds</li>
+          <li>Winner takes the full $300</li>
+        </ul>
+      </div>
+      <div class="panel prize-panel">
+        <h3>💪 Low Gross</h3>
+        <div class="price">$25 <small>/ golfer</small></div>
+        <ul>
+          <li>Pot: $300 (12 × $25)</li>
+          <li>Best gross across the 5 weekend rounds</li>
+          <li>Winner takes the full $300</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="cost-table" style="margin-top:22px">
+      <thead><tr><th>Buy-In</th><th>What it funds</th><th>Per Golfer</th></tr></thead>
+      <tbody>
+        <tr><td>Cup entry</td><td>Team match-play pot — winning team splits $3,000 ($500 each)</td><td>$250</td></tr>
+        <tr><td>Low net prize</td><td>Best net individual across the 5 weekend rounds ($300 pot)</td><td>$25</td></tr>
+        <tr><td>Low gross prize</td><td>Best gross individual across the 5 weekend rounds ($300 pot)</td><td>$25</td></tr>
+        <tr class="total"><td>Total Buy-In</td><td>Competition pots only</td><td>$300</td></tr>
+      </tbody>
+    </table>
+    <p class="cost-note"><strong>Separate from buy-in:</strong> lodging, green fees, transport, and food/drinks get split once the house, tee times, and travel are booked — I'll add a full "who owes what" breakdown then. The 5 scoring rounds are Friday (2), Saturday (2), and Sunday (1); the Thursday practice round doesn't count toward the low net / low gross prizes.</p>
+  </div>
+</section>
+
+<!-- LIVE SCORING & CUP -->
+<section id="cup">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">07</span><h2>Live Scoring &amp; Cup</h2></div>
+    <p class="sec-intro">Enter gross scores hole-by-hole and the app computes every net match automatically — best ball, shamble, and singles — updating the Cup live. Player &amp; team stats and the prize leaderboards update as you go. <span class="edit-note">✎ Scores auto-save in this browser. Use Export to back up or move to another device.</span></p>
+
+    <div class="app">
+      <div class="apptabs" id="apptabs">
+        <button data-tab="cup" class="on">🏆 Cup</button>
+        <button data-tab="scores">📝 Enter Scores</button>
+        <button data-tab="stats">📊 Stats</button>
+        <button data-tab="setup">⚙️ Teams &amp; Setup</button>
+      </div>
+      <div class="apptop">
+        <button onclick="exportData()">⬇︎ Export backup</button>
+        <label class="imp">⬆︎ Import<input type="file" accept="application/json,.json" onchange="importData(event)"></label>
+        <button onclick="resetAllConfirm()">↺ Reset all</button>
+        <span class="save" id="saveState"></span>
+      </div>
+      <div id="tab-cup" class="tabpane"></div>
+      <div id="tab-scores" class="tabpane hidden"></div>
+      <div id="tab-stats" class="tabpane hidden"></div>
+      <div id="tab-setup" class="tabpane hidden"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="big">🏆 May the best team lift the Lando Cup — Orlando, March 2027</div>
+  <div>Long drives, short putts, and a net score that holds up. • Built for the crew.</div>
+  <div style="margin-top:14px;font-weight:800;color:#fff">🐢 Presented by Terrapin Station Golf Co.</div>
+</footer>
+
+<script>
+/* ---------- COUNTDOWN to Wed March 10, 2027, 5:00pm ---------- */
+var TRIP_START = new Date(2027, 2, 10, 17, 0, 0);
+function tick(){
+  var now=new Date(), diff=Math.max(0,TRIP_START-now);
+  document.getElementById('cd-days').textContent=Math.floor(diff/86400000);
+  document.getElementById('cd-hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
+}
+setInterval(tick,1000); tick();
+
+/* =====================================================================
+   LANDO CUP — LIVE SCORING ENGINE
+   ===================================================================== */
+var TOTAL=18, WIN=9.5;
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function fmtPts(x){ if(Number.isInteger(x)) return String(x); return (Math.floor(x))+'½'; }
+
+/* ---- Real scorecards (par + stroke index) ---- */
+var CARDS={
+  celebration:{name:'Celebration Golf Club', tee:'Black/Gold', slope:137, rating:72.1,
+    par:[4,4,3,5,3,5,4,4,4, 4,4,5,3,4,4,3,4,5],
+    si: [11,13,15,9,17,7,1,3,5, 18,2,14,16,10,12,6,8,4]},
+  gclinks:{name:'Grand Cypress — Links', tee:'White', slope:115, rating:69.0,
+    par:[4,5,3,4,4,5,3,4,4, 4,4,3,4,4,5,3,5,4],
+    si: [13,7,15,3,5,9,17,1,11, 10,6,8,4,12,2,18,16,14]},
+  gccypress:{name:'Grand Cypress — Cypress', tee:'Blue', slope:119, rating:70.1,
+    par:[4,5,3,4,4,4,4,3,5, 4,3,4,5,4,5,4,3,4],
+    si: [7,11,15,5,17,3,1,9,13, 10,12,4,14,18,8,2,16,6]},
+  shingle:{name:'Shingle Creek Golf Club', tee:'Blue', slope:122, rating:69.9,
+    par:[4,5,4,4,3,4,3,5,4, 4,4,4,5,4,3,5,3,4],
+    si: [9,5,11,13,17,7,15,1,3, 10,4,12,2,14,18,6,16,8]}
+};
+
+/* ---- Rounds (5 scoring rounds) ---- */
+var ROUNDDEF=[
+  {short:'Fri AM', label:'Friday AM · Celebration · Best Ball',        card:'celebration', format:'bestball'},
+  {short:'Fri PM', label:'Friday PM · Celebration · Shamble',          card:'celebration', format:'shamble'},
+  {short:'Sat AM', label:'Saturday AM · Grand Cypress Links · Best Ball', card:'gclinks',  format:'bestball'},
+  {short:'Sat PM', label:'Saturday PM · Grand Cypress Cypress · Shamble', card:'gccypress',format:'shamble'},
+  {short:'Sun',    label:'Sunday · Shingle Creek · Singles',           card:'shingle',     format:'singles'}
+];
+/* session i -> round i; matches per session */
+var MATCHDEF=[
+  {round:0, count:3, type:'2v2', title:'Friday AM · Celebration · Best Ball (3 pts)'},
+  {round:1, count:3, type:'2v2', title:'Friday PM · Celebration · Shamble (3 pts)'},
+  {round:2, count:3, type:'2v2', title:'Saturday AM · Grand Cypress Links · Best Ball (3 pts)'},
+  {round:3, count:3, type:'2v2', title:'Saturday PM · Grand Cypress Cypress · Shamble (3 pts)'},
+  {round:4, count:6, type:'1v1', title:'Sunday · Shingle Creek · Singles (6 pts)'}
+];
+
+var PLAYERDEF=[
+  ['Dan Abbene',5.4],['Mike Pearse',6.8],['Mike Campisi',7.8],['Michael McSloy',9.4],
+  ['David Sommo',10.0],['Charles Campisi',12.4],['Adam Melanson',13.3],['Patrick Quinn',14.2],
+  ['Reggie Smith',15.1],['Steve Szalay',15.5],["Matt O'Leary",17.1],["Tim O'Connor",20.0]
+];
+
+/* ---- State ---- */
+var LS_KEY='landoCup2027';
+var state=null, curRound=0, curTab='cup';
+
+function freshState(){
+  var s={ teamA:{name:'Team Red'}, teamB:{name:'Team Blue'}, players:[], cards:JSON.parse(JSON.stringify(CARDS)),
+          scores:{}, matches:[] };
+  PLAYERDEF.forEach(function(p,i){ s.players.push({id:'p'+i, name:p[0], index:p[1], team:null}); });
+  MATCHDEF.forEach(function(md,si){ for(var m=0;m<md.count;m++){ s.matches.push({session:si, round:md.round, type:md.type, A:[], B:[], override:null}); } });
+  return s;
+}
+function load(){
+  try{ var raw=localStorage.getItem(LS_KEY); if(raw){ state=JSON.parse(raw);
+    if(!state.cards) state.cards=JSON.parse(JSON.stringify(CARDS));
+    if(!state.matches||!state.matches.length) state.matches=freshState().matches;
+    return; } }catch(e){}
+  state=freshState();
+}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); flashSaved('Saved ✓'); }
+  catch(e){ flashSaved('In-memory only'); } }
+function flashSaved(t){ var el=document.getElementById('saveState'); if(el) el.textContent=t; }
+
+/* ---- Helpers ---- */
+function playerById(id){ return state.players.filter(function(p){return p.id===id;})[0]; }
+function roundCard(ri){ return state.cards[ROUNDDEF[ri].card]; }
+function scoresArr(ri,pid){ if(!state.scores[ri]) state.scores[ri]={}; if(!state.scores[ri][pid]) state.scores[ri][pid]=new Array(18).fill(''); return state.scores[ri][pid]; }
+function coursePar(card){ return card.par.reduce(function(a,b){return a+b;},0); }
+function courseHandicap(pl, card){
+  var idx=+pl.index;
+  if(card.slope && card.rating) return Math.round(idx*card.slope/113 + (card.rating - coursePar(card)));
+  return Math.round(idx);
+}
+function strokesOn(ch, si){ if(ch<0)ch=0; var base=Math.floor(ch/18), rem=ch-base*18; return base + (si<=rem?1:0); }
+function netOnHole(ids, ri, h){
+  var card=roundCard(ri), best=null;
+  ids.forEach(function(pid){
+    var arr=scoresArr(ri,pid), g=arr[h];
+    if(g===''||g==null) return;
+    var pl=playerById(pid), net=(+g) - strokesOn(courseHandicap(pl,card), card.si[h]);
+    if(best===null||net<best) best=net;
+  });
+  return best;
+}
+
+/* ---- Match play computation ---- */
+function computeMatch(m){
+  var A=m.A||[], B=m.B||[], ri=m.round;
+  if(!A.length||!B.length) return {status:'empty', text:'Set the matchup', winner:null};
+  var up=0, thru=0, closeHole=null, both=0;
+  for(var h=0;h<18;h++){
+    var a=netOnHole(A,ri,h), b=netOnHole(B,ri,h);
+    if(a===null||b===null) continue;
+    both++; thru=h+1;
+    if(a<b) up++; else if(b<a) up--;
+    if(Math.abs(up) > (17-h)){ closeHole=h+1; break; }
+  }
+  if(thru===0) return {status:'empty', text:'No scores yet', winner:null};
+  var complete = (closeHole!==null) || (both===18);
+  if(!complete){
+    var t = up===0 ? ('All square thru '+thru) : ((up>0?'A':'B')+' '+Math.abs(up)+' up thru '+thru);
+    return {status:'partial', text:t, winner:null, up:up};
+  }
+  var winner = up>0?'A':(up<0?'B':'half');
+  var text;
+  if(up===0) text='Halved (AS)';
+  else if(closeHole && closeHole<18) text=Math.abs(up)+'&'+(18-closeHole);
+  else text=Math.abs(up)+' up';
+  return {status:'final', text:text, winner:winner, up:up};
+}
+function matchPoints(m){
+  if(m.override==='A') return {a:1,b:0,decided:true,src:'ovr'};
+  if(m.override==='B') return {a:0,b:1,decided:true,src:'ovr'};
+  if(m.override==='half') return {a:.5,b:.5,decided:true,src:'ovr'};
+  var r=computeMatch(m);
+  if(r.status==='final'){
+    if(r.winner==='A') return {a:1,b:0,decided:true,src:'auto'};
+    if(r.winner==='B') return {a:0,b:1,decided:true,src:'auto'};
+    return {a:.5,b:.5,decided:true,src:'auto'};
+  }
+  return {a:0,b:0,decided:false,src:'auto'};
+}
+function tally(){ var a=0,b=0,dec=0; state.matches.forEach(function(m){ var p=matchPoints(m); a+=p.a; b+=p.b; if(p.decided)dec++; }); return {a:a,b:b,remaining:18-dec}; }
+
+/* =====================  RENDER  ===================== */
+function renderAll(){ renderCup(); renderScores(); renderStats(); renderSetup(); }
+
+function teamPlayers(t){ return state.players.filter(function(p){return p.team===t;}); }
+
+/* ----- CUP TAB ----- */
+function renderCup(){
+  var t=tally(), rn=esc(state.teamA.name||'Team Red'), bn=esc(state.teamB.name||'Team Blue');
+  var msg='';
+  if(t.a>=WIN) msg='🏆 '+rn+' wins the Cup!';
+  else if(t.b>=WIN) msg='🏆 '+bn+' wins the Cup!';
+  else if(t.a + t.remaining < WIN) msg='🏆 '+bn+' has clinched!';
+  else if(t.b + t.remaining < WIN) msg='🏆 '+rn+' has clinched!';
+  else if(t.remaining===0 && t.a===t.b) msg='🤝 '+fmtPts(t.a)+'–'+fmtPts(t.b)+' — Cup retained (tie)';
+
+  var h='<div class="scoreboard">'+
+    '<div class="teams">'+
+      '<div class="teamcol red"><input value="'+rn+'" onchange="setTeamName(\'A\',this.value)"><div class="score">'+fmtPts(t.a)+'</div></div>'+
+      '<div class="vs">VS</div>'+
+      '<div class="teamcol blue"><input value="'+bn+'" onchange="setTeamName(\'B\',this.value)"><div class="score">'+fmtPts(t.b)+'</div></div>'+
+    '</div>'+
+    '<div class="barwrap"><div class="bar-red" style="width:'+(t.a/TOTAL*100)+'%"></div><div class="bar-blue" style="width:'+(t.b/TOTAL*100)+'%"></div></div>'+
+    '<div class="winline"><b>9½</b> wins the Cup · '+fmtPts(t.remaining)+' still to play</div>'+
+    '<div class="cup-msg">'+msg+'</div></div>';
+
+  h+='<p class="hint" style="margin-top:14px">Pick the two-man pairings (or singles) for each match, then enter scores in the <b>Enter Scores</b> tab — results compute automatically. Tap an override chip to set a result by hand.</p>';
+
+  MATCHDEF.forEach(function(md,si){
+    h+='<h3 class="blk">'+md.title+'</h3>';
+    state.matches.forEach(function(m,mi){
+      if(m.session!==si) return;
+      var r=computeMatch(m), pt=matchPoints(m);
+      var rescls='', restxt=r.text;
+      if(pt.src==='ovr'){ rescls=pt.a>pt.b?'red':(pt.b>pt.a?'blue':'half'); restxt='Set: '+(pt.a>pt.b?'Red':(pt.b>pt.a?'Blue':'Half')); }
+      else if(r.status==='final'){ rescls=r.winner==='A'?'red':(r.winner==='B'?'blue':'half'); restxt=(r.winner==='A'?'Red ':(r.winner==='B'?'Blue ':''))+r.text; }
+      var n=mi+1;
+      h+='<div class="cupmatch"><div class="top"><span class="mno">Match '+n+'</span>'+
+         '<span class="res '+rescls+'">'+esc(restxt)+'</span></div>';
+      h+='<div class="sides"><div>'+pickers(m,mi,'A')+'</div><div class="midvs">vs</div><div>'+pickers(m,mi,'B')+'</div></div>';
+      h+='<div class="ovr"><span class="auto">'+(pt.src==='ovr'?'manual override':'auto from scores')+'</span>'+
+         '<button class="'+(m.override==='A'?'ra':'')+'" onclick="setOverride('+mi+',\'A\')">Red</button>'+
+         '<button class="'+(m.override==='half'?'ha':'')+'" onclick="setOverride('+mi+',\'half\')">½</button>'+
+         '<button class="'+(m.override==='B'?'ba':'')+'" onclick="setOverride('+mi+',\'B\')">Blue</button>'+
+         '<button onclick="setOverride('+mi+',null)">Auto</button></div>';
+      h+='</div>';
+    });
+  });
+  document.getElementById('tab-cup').innerHTML=h;
+}
+function pickers(m, mi, side){
+  var need = m.type==='2v2'?2:1;
+  var pool = state.players.filter(function(p){ return side==='A' ? (p.team==='A'||p.team==null) : (p.team==='B'||p.team==null); });
+  var cur = m[side];
+  var out='';
+  for(var k=0;k<need;k++){
+    var selId=cur[k]||'';
+    out+='<select onchange="setSidePlayer('+mi+',\''+side+'\','+k+',this.value)">';
+    out+='<option value="">—</option>';
+    pool.forEach(function(p){
+      var used = (cur.indexOf(p.id)>=0 && cur[k]!==p.id);
+      out+='<option value="'+p.id+'"'+(selId===p.id?' selected':'')+(used?' disabled':'')+'>'+esc(p.name)+' ('+p.index+')</option>';
+    });
+    out+='</select>';
+  }
+  return out;
+}
+function setTeamName(t,v){ (t==='A'?state.teamA:state.teamB).name=v; save(); renderCup(); renderStats(); renderSetup(); }
+function setSidePlayer(mi,side,k,val){ var m=state.matches[mi]; var arr=m[side].slice(); arr[k]=val; arr=arr.filter(function(x){return x;}); m[side]=arr; save(); renderCup(); renderStats(); }
+function setOverride(mi,val){ state.matches[mi].override=val; save(); renderCup(); renderStats(); }
+
+/* ----- ENTER SCORES TAB ----- */
+function renderScores(){
+  var h='<div class="rsel">';
+  ROUNDDEF.forEach(function(rd,ri){ h+='<button class="'+(ri===curRound?'on':'')+'" onclick="pickRound('+ri+')">'+rd.short+'</button>'; });
+  h+='</div>';
+  var rd=ROUNDDEF[curRound], card=roundCard(curRound);
+  h+='<div class="hint"><b>'+esc(rd.label)+'</b> — '+esc(card.name)+' · '+esc(card.tee)+' tees · '+card.rating+'/'+card.slope+' · par '+coursePar(card)+
+     '. Enter each player\'s gross per hole; net is auto-computed from their course handicap.</div>';
+  h+='<div class="entry-wrap"><table class="entry"><thead><tr><th class="pn">Hole</th>';
+  for(var i=0;i<18;i++) h+='<th>'+(i+1)+'</th>';
+  h+='<th>Out</th><th>In</th><th>Tot</th><th>±</th></tr>';
+  h+='<tr class="par-row"><td class="pn">Par</td>';
+  for(var i=0;i<18;i++) h+='<td>'+card.par[i]+'</td>';
+  var out=card.par.slice(0,9).reduce(function(a,b){return a+b;},0), inn=card.par.slice(9).reduce(function(a,b){return a+b;},0);
+  h+='<td>'+out+'</td><td>'+inn+'</td><td>'+(out+inn)+'</td><td>—</td></tr>';
+  h+='<tr class="si-row"><td class="pn">Stroke Idx</td>';
+  for(var i=0;i<18;i++) h+='<td>'+card.si[i]+'</td>';
+  h+='<td></td><td></td><td></td><td></td></tr></thead><tbody>';
+
+  state.players.forEach(function(p){
+    var arr=scoresArr(curRound,p.id), ch=courseHandicap(p,card);
+    h+='<tr><td class="pn">'+esc(p.name)+'<small>idx '+p.index+' · CH '+ch+'</small></td>';
+    var so=0,si2=0,cnt=0,par=0;
+    for(var i=0;i<18;i++){
+      var v=arr[i];
+      h+='<td><input class="sc" inputmode="numeric" value="'+esc(v)+'" onchange="setScore('+curRound+',\''+p.id+'\','+i+',this.value)"></td>';
+      if(v!==''&&v!=null){ var g=+v; if(i<9)so+=g; else si2+=g; cnt++; par+=card.par[i]; }
+    }
+    var tot=so+si2, tp=cnt?(tot-par):null;
+    var tpc = tp==null?'':(tp>0?'u':(tp<0?'d':''));
+    var tpt = tp==null?'—':(tp>0?'+'+tp:tp);
+    h+='<td class="sum">'+(so||'')+'</td><td class="sum">'+(si2||'')+'</td><td class="sum">'+(tot||'')+'</td><td class="sum topar '+tpc+'">'+tpt+'</td></tr>';
+  });
+  h+='</tbody></table></div>';
+  document.getElementById('tab-scores').innerHTML=h;
+}
+function pickRound(ri){ curRound=ri; renderScores(); }
+function setScore(ri,pid,h,val){ var n=String(val).replace(/[^0-9]/g,''); scoresArr(ri,pid)[h]= n===''?'':(+n); save(); renderScores(); renderCup(); renderStats(); }
+
+/* ----- STATS TAB ----- */
+function playerStats(p){
+  var gross=0,holes=0,toPar=0,net=0,parPlayed=0,eag=0,bir=0,parc=0,bog=0,dbl=0,rounds=0,best=null;
+  ROUNDDEF.forEach(function(rd,ri){
+    var arr=scoresArr(ri,p.id), card=roundCard(ri), ch=courseHandicap(p,card);
+    var any=arr.some(function(g){return g!==''&&g!=null;}); if(!any) return;
+    var rg=0, full=true;
+    for(var h=0;h<18;h++){ var g=arr[h]; if(g===''||g==null){full=false;continue;} g=+g;
+      gross+=g; rg+=g; holes++; parPlayed+=card.par[h]; toPar+=(g-card.par[h]); net+=g-strokesOn(ch,card.si[h]);
+      var d=g-card.par[h]; if(d<=-2)eag++; else if(d===-1)bir++; else if(d===0)parc++; else if(d===1)bog++; else dbl++;
+    }
+    if(full){ rounds++; if(best===null||rg<best)best=rg; }
+  });
+  var w=0,l=0,hh=0;
+  state.matches.forEach(function(m){ var side=m.A.indexOf(p.id)>=0?'A':(m.B.indexOf(p.id)>=0?'B':null); if(!side)return;
+    var pt=matchPoints(m); if(!pt.decided)return;
+    var won=(side==='A'&&pt.a>pt.b)||(side==='B'&&pt.b>pt.a);
+    var lost=(side==='A'&&pt.a<pt.b)||(side==='B'&&pt.b<pt.a);
+    if(won)w++; else if(lost)l++; else hh++;
+  });
+  return {p:p,gross:gross,holes:holes,toPar:toPar,net:net,netToPar:net-parPlayed,rounds:rounds,best:best,
+          eag:eag,bir:bir,par:parc,bog:bog,dbl:dbl,w:w,l:l,hh:hh};
+}
+function renderStats(){
+  var stats=state.players.map(playerStats);
+  var played=stats.filter(function(s){return s.holes>0;});
+  var t=tally();
+  /* team summary */
+  function teamRec(team){ var w=0,l=0,hh=0; state.matches.forEach(function(m){ var pt=matchPoints(m); if(!pt.decided)return;
+    var isA=team==='A'; var win=isA?pt.a>pt.b:pt.b>pt.a, los=isA?pt.a<pt.b:pt.b<pt.a; if(win)w++;else if(los)l++;else hh++; }); return w+'–'+l+'–'+hh; }
+  var h='<div class="teamsum">'+
+    '<div class="tsum red"><div class="nm">'+esc(state.teamA.name)+'</div><div class="pts">'+fmtPts(t.a)+'</div><div class="rec">Matches '+teamRec('A')+' (W–L–H)</div></div>'+
+    '<div class="tsum blue"><div class="nm">'+esc(state.teamB.name)+'</div><div class="pts">'+fmtPts(t.b)+'</div><div class="rec">Matches '+teamRec('B')+' (W–L–H)</div></div>'+
+   '</div>';
+
+  /* prize leaderboards */
+  var gRank=played.slice().sort(function(a,b){return a.toPar-b.toPar || a.gross-b.gross;});
+  var nRank=played.slice().sort(function(a,b){return a.netToPar-b.netToPar || a.net-b.net;});
+  h+='<div class="lead-grid">';
+  h+=leadCard('💪 Low Gross — $300', gRank, function(s){return sgn(s.toPar);}, 'thru '+ '');
+  h+=leadCard('🎯 Low Net — $300', nRank, function(s){return sgn(s.netToPar);}, '');
+  h+='</div>';
+
+  /* full player table */
+  h+='<div class="statcard"><h4>Player Stats</h4><div class="stat-scroll"><table class="stat">'+
+     '<thead><tr><th class="dot"></th><th style="text-align:left">Player</th><th>Idx</th><th>Rds</th><th>Holes</th><th>Gross ±</th><th>Net ±</th><th>Best</th><th>Bird</th><th>Par</th><th>Match</th></tr></thead><tbody>';
+  var order=stats.slice().sort(function(a,b){ if(b.holes-a.holes) return (b.holes>0)-(a.holes>0)||0; return a.netToPar-b.netToPar; });
+  stats.forEach(function(s){
+    var dot=s.p.team==='A'?'dotr':(s.p.team==='B'?'dotb':'');
+    h+='<tr><td class="dot '+dot+'">'+(s.p.team?'●':'')+'</td>'+
+       '<td class="nm">'+esc(s.p.name)+'</td><td>'+s.p.index+'</td>'+
+       '<td>'+(s.rounds||'')+'</td><td>'+(s.holes||'')+'</td>'+
+       '<td>'+(s.holes?sgn(s.toPar):'—')+'</td>'+
+       '<td>'+(s.holes?sgn(s.netToPar):'—')+'</td>'+
+       '<td>'+(s.best!=null?s.best:'—')+'</td>'+
+       '<td>'+(s.bir+s.eag)+'</td><td>'+s.par+'</td>'+
+       '<td>'+s.w+'–'+s.l+'–'+s.hh+'</td></tr>';
+  });
+  h+='</tbody></table></div><p class="hint">Gross ± and Net ± are versus par over holes played. Match record counts decided Cup matches. ● = team color.</p></div>';
+  document.getElementById('tab-stats').innerHTML=h;
+}
+function leadCard(title, rank, valFn){
+  var h='<div class="statcard"><h4>'+title+'</h4><table class="stat"><tbody>';
+  if(!rank.length){ h+='<tr><td class="nm" style="color:#8a9a8e">Enter scores to rank…</td></tr>'; }
+  rank.slice(0,6).forEach(function(s,i){
+    h+='<tr class="'+(i===0?'lead1':'')+'"><td class="nm">'+(i===0?'🥇 ':(i===1?'🥈 ':(i===2?'🥉 ':(i+1)+'. ')))+esc(s.p.name)+'</td>'+
+       '<td style="text-align:right;font-weight:800">'+valFn(s)+'</td>'+
+       '<td style="text-align:right;color:#8a9a8e;font-size:.72rem">'+s.holes+'h</td></tr>';
+  });
+  h+='</tbody></table></div>';
+  return h;
+}
+function sgn(x){ return x>0?('+'+x):(x===0?'E':String(x)); }
+
+/* ----- SETUP TAB ----- */
+function renderSetup(){
+  var h='<h3 class="blk">Teams</h3><div class="setrow">'+
+    '<input class="teamname-in red" value="'+esc(state.teamA.name)+'" onchange="setTeamName(\'A\',this.value)">'+
+    '<input class="teamname-in blue" value="'+esc(state.teamB.name)+'" onchange="setTeamName(\'B\',this.value)">'+
+    '</div><p class="hint">Assign each golfer to a team (do this after the Thursday draft). Handicap index is editable — refresh it before the event.</p>';
+  var ca=teamPlayers('A').length, cb=teamPlayers('B').length;
+  h+='<p class="hint"><b class="dotr">●</b> '+esc(state.teamA.name)+': '+ca+'/6 &nbsp; <b class="dotb">●</b> '+esc(state.teamB.name)+': '+cb+'/6</p>';
+  h+='<div class="psetup">';
+  state.players.forEach(function(p){
+    h+='<div class="prow"><span class="pn">'+esc(p.name)+'</span>'+
+       '<input class="idx" value="'+p.index+'" onchange="setIndex(\''+p.id+'\',this.value)">'+
+       '<button class="tbtn '+(p.team==='A'?'ra':'')+'" onclick="setTeam(\''+p.id+'\',\'A\')">R</button>'+
+       '<button class="tbtn '+(p.team==null?'':'')+'" onclick="setTeam(\''+p.id+'\',null)" title="Unassign">—</button>'+
+       '<button class="tbtn '+(p.team==='B'?'ba':'')+'" onclick="setTeam(\''+p.id+'\',\'B\')">B</button></div>';
+  });
+  h+='</div>';
+
+  h+='<h3 class="blk" style="margin-top:22px">Course Scorecards</h3><p class="hint">Par, stroke index, slope &amp; rating sourced from <b>18Birdies</b>. Edit here if anything needs correcting.</p>';
+  Object.keys(state.cards).forEach(function(key){
+    var c=state.cards[key];
+    h+='<details class="crd"><summary>'+esc(c.name)+' — '+esc(c.tee)+' ('+c.rating+'/'+c.slope+', par '+coursePar(c)+')</summary>';
+    h+='<div class="metaline"><label>Slope <input value="'+c.slope+'" onchange="setCard(\''+key+'\',\'slope\',this.value)"></label>'+
+       '<label>Rating <input value="'+c.rating+'" onchange="setCard(\''+key+'\',\'rating\',this.value)"></label></div>';
+    h+='<div class="sc-edit"><table class="sc-mini"><tr><th class="lbl">Hole</th>';
+    for(var i=0;i<18;i++) h+='<th>'+(i+1)+'</th>'; h+='</tr>';
+    h+='<tr><td class="lbl">Par</td>';
+    for(var i=0;i<18;i++) h+='<td><input value="'+c.par[i]+'" onchange="setCardArr(\''+key+'\',\'par\','+i+',this.value)"></td>'; h+='</tr>';
+    h+='<tr><td class="lbl">Stroke Idx</td>';
+    for(var i=0;i<18;i++) h+='<td><input value="'+c.si[i]+'" onchange="setCardArr(\''+key+'\',\'si\','+i+',this.value)"></td>'; h+='</tr>';
+    h+='</table></div></details>';
+  });
+  document.getElementById('tab-setup').innerHTML=h;
+}
+function setIndex(pid,v){ var n=parseFloat(v); playerById(pid).index=isNaN(n)?0:n; save(); renderSetup(); renderScores(); renderCup(); renderStats(); }
+function setTeam(pid,t){ playerById(pid).team=t; save(); renderSetup(); renderCup(); renderStats(); }
+function setCard(key,f,v){ var n=parseFloat(v); state.cards[key][f]=isNaN(n)?'':n; save(); renderSetup(); renderScores(); renderCup(); renderStats(); }
+function setCardArr(key,f,i,v){ var n=parseInt(v,10); state.cards[key][f][i]=isNaN(n)?0:n; save(); renderSetup(); renderScores(); renderCup(); renderStats(); }
+
+/* ----- tabs, import/export ----- */
+document.getElementById('apptabs').addEventListener('click',function(e){
+  var b=e.target.closest('button[data-tab]'); if(!b) return;
+  curTab=b.getAttribute('data-tab');
+  Array.prototype.forEach.call(this.children,function(x){x.classList.toggle('on',x===b);});
+  ['cup','scores','stats','setup'].forEach(function(t){ document.getElementById('tab-'+t).classList.toggle('hidden', t!==curTab); });
+});
+function exportData(){
+  var blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='lando-cup-2027.json'; a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+}
+function importData(ev){
+  var f=ev.target.files[0]; if(!f) return; var rd=new FileReader();
+  rd.onload=function(){ try{ var s=JSON.parse(rd.result); if(!s.players||!s.matches) throw 0; state=s;
+    if(!state.cards) state.cards=JSON.parse(JSON.stringify(CARDS)); save(); renderAll();
+    flashSaved('Imported ✓'); }catch(e){ alert('That file could not be read as a Lando Cup backup.'); } };
+  rd.readAsText(f); ev.target.value='';
+}
+function resetAllConfirm(){ if(confirm('Reset ALL scores, teams, matchups and results? This cannot be undone.')){ state=freshState(); save(); renderAll(); } }
+
+/* ----- boot ----- */
+load(); renderAll();
+</script>
+</body>
+</html>
