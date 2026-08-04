@@ -401,7 +401,7 @@
         <div class="date">Wednesday • March 10</div>
         <h3>Arrival Day</h3>
         <ul>
-          <li><span class="time">5:00p</span><span class="evt">House opens — check in, settle in, first round of drinks<span class="tag travel">Travel</span></span></li>
+          <li><span class="time">3:00p</span><span class="evt">House opens — check in, settle in, first round of drinks<span class="tag travel">Travel</span></span></li>
         </ul>
       </div>
       <div class="day">
@@ -500,10 +500,11 @@
     <div class="panels">
       <div class="panel">
         <h3>🏠 Home Base</h3>
-        <p><strong>The House</strong><br>Address TBD, Orlando area</p>
+        <p><strong>The House</strong> · <span style="color:var(--lime-bright);font-weight:900">Booked ✓</span><br>Address TBD, Orlando area</p>
         <ul>
-          <li>Opens Wed, March 10 at 5:00pm</li>
+          <li>Check-in Wed, March 10 at 3:00pm</li>
           <li>Depart Sunday, March 14 after golf</li>
+          <li>4 nights · $2,044.78 total (~$170.40/golfer)</li>
           <li>Sleeping arrangements TBD</li>
         </ul>
       </div>
@@ -601,7 +602,20 @@
         <tr class="total"><td>Total Buy-In</td><td>Competition pots only</td><td>$300</td></tr>
       </tbody>
     </table>
-    <p class="cost-note"><strong>Separate from buy-in:</strong> lodging, green fees, transport, and food/drinks get split once the house, tee times, and travel are booked — I'll add a full "who owes what" breakdown then. The 5 scoring rounds are Friday (2), Saturday (2), and Sunday (1); the Thursday practice round doesn't count toward the low net / low gross prizes.</p>
+    <p class="cost-note">The 5 scoring rounds are Friday (2), Saturday (2), and Sunday (1); the Thursday practice round doesn't count toward the low net / low gross prizes.</p>
+
+    <h3 class="blk" style="color:var(--fairway);font-size:1.15rem;margin:30px 0 4px;border-bottom:none">Shared Trip Costs</h3>
+    <p class="sec-intro" style="margin:0 0 14px">Separate from the competition buy-in — split evenly across the 12 golfers.</p>
+    <table class="cost-table">
+      <thead><tr><th>Item</th><th>Details</th><th>Total</th><th>Per Golfer</th></tr></thead>
+      <tbody>
+        <tr><td>Lodging <span style="color:#2e7d32;font-weight:800">✓ Booked</span></td><td>The house — 4 nights (Wed–Sun), incl. 7% off &amp; taxes</td><td>$2,044.78</td><td>$170.40</td></tr>
+        <tr><td>Green fees</td><td>Practice round + 5 Cup rounds</td><td>TBD</td><td>TBD</td></tr>
+        <tr><td>Transport</td><td>Rental cars / rideshare</td><td>TBD</td><td>TBD</td></tr>
+        <tr><td>Food &amp; drinks</td><td>Team dinners, groceries, nights out</td><td>TBD</td><td>TBD</td></tr>
+      </tbody>
+    </table>
+    <p class="cost-note">Lodging paid up front by Mike (Terrapin Station) — each golfer's share is <strong>$170.40</strong>. I'll fill in green fees, transport &amp; food as they're booked and add a running "who owes what" total.</p>
   </div>
 </section>
 
@@ -640,7 +654,7 @@
 
 <script>
 /* ---------- COUNTDOWN to Wed March 10, 2027, 5:00pm ---------- */
-var TRIP_START = new Date(2027, 2, 10, 17, 0, 0);
+var TRIP_START = new Date(2027, 2, 10, 15, 0, 0);
 function tick(){
   var now=new Date(), diff=Math.max(0,TRIP_START-now);
   document.getElementById('cd-days').textContent=Math.floor(diff/86400000);
